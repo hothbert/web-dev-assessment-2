@@ -1,0 +1,36 @@
+.banner {
+  width: 100%;
+  height: auto;
+}
+
+.nav-link.active, .nav-link.active:hover, footer {
+  background-color: rgb(87, 25, 105) !important;
+  color: white !important;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+.nav-link:hover {
+    color: rgb(163, 162, 162) !important;
+}
+
+body {
+  background-color: black !important
+}
+
+main {
+  background-color: rgb(38, 0, 47);
+  color: white;
+  padding: 10px;
+  margin: 5px;
+}
+
+nav {
+  margin: 5px;
+}
+
+footer {
+  height: 100px;
+}
