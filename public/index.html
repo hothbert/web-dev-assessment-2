@@ -36,8 +36,8 @@
             <div class="container-fluid">
                 <div class="row">
 
-                    <div class="col-sm-5">
-                        <div class="card bg-black">
+                    <div class="col-sm-4">
+                        <div class="card bg-black" style="text-align: center;">
                             <div class="card-header">
                                 <h4>About Me</h4>
                             </div>
@@ -47,10 +47,58 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-7">
+                    <div class="col-sm-8">
 
                         <h4>Studies</h4>
+                        <div id="accordion">
+                            <div class="card bg-black">
+                                <div class="card-header">
+                                    <a class="btn" data-bs-toggle="collapse" href="#highSchool" style="color: inherit;">High School</a>
+                                </div>
+                                <div id="highSchool" class="collapse show" data-bs-parent="accordion">
+                                    <div class="card-body">
+                                        <h6>Park Mains High School</h6>
+                                        <p>Qualifications:</br>Advanced Higher Mathematics - A</br>Advanced Higher Biology - A</br>Higher Computer Science - A</br>Higher Music - A<br>Higher English - A</br>Higher Human Biology - A</br>National 5 Geography - A</br>National 5 Chemistry - A</p>
+                                    </div>
+                                </div>
+                            </div>
 
+                            <div class="card bg-black">
+                                <div class="card-header">
+                                    <a class="collapsed btn" data-bs-toggle="collapse" href="#college" style="color: inherit;">College</a>
+                                </div>
+                                <div id="college" class="collapse" data-bs-parent="accordion">
+                                    <div class="card-body">
+                                        <h6>West College Scotland</h6>
+                                        <p>Qualifications:</br>Higher Psychology - A</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card bg-black">
+                                <div class="card-header">
+                                    <a class="collapsed btn" data-bs-toggle="collapse" href="#rcs" style="color: inherit;">Royal Conservatoire of Scotland</a>
+                                </div>
+                                <div id="rcs" class="collapse" data-bs-parent="accordion">
+                                    <div class="card-body">
+                                        <h6>Piano</h6>
+                                        <h6>Flute</h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card bg-black">
+                                <div class="card-header">
+                                    <a class="collapsed btn" data-bs-toggle="collapse" href="#university" style="color: inherit;">University</a>
+                                </div>
+                                <div id="university" class="collapse" data-bs-parent="accordion">
+                                    <div class="card-body">
+                                        <h6>The Open University</h6>
+                                        <p>Qualifications:</br>Technologies in Practice - Distinction (A)</p>
+                                        <h6>University of Aberdeen</h6>
+                                    </div>
+                                </div>
+                            </div>
                     </div>
 
                 </div>
