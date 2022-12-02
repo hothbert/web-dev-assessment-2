@@ -37,4 +37,8 @@ io.on("connection", function (socket) {
       io.emit("chat message", data);
   });
 
+  socket.on("typing", function(data) {
+    io.emit("typing", data)
+  })
+
 });

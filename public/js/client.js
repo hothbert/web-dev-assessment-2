@@ -48,13 +48,23 @@ newUserConnected();
 //when a new user event is detected
 socket.on("new user", function (data) {
   data.map(function (user) {
-          return addToUsersBox(user);
+          if(!!document.querySelector(`.${user}-userlist`)){
+            console.log("a")
+            return
+          }
+          addNewMessage( {user : "", message: ((user + " has connected to the chat")).bold()}); //displays message about user joining
+          
+          addToUsersBox(user);
       });
+  
+  
 });
 
 //when a user leaves
 socket.on("user disconnected", function (userName) {
   document.querySelector(`.${userName}-userlist`).remove();
+
+  addNewMessage( {user : "", message: ((userName + " has left the chat")).bold()}); //displays message about user leaving
 });
 
 
@@ -108,3 +118,16 @@ messageForm.addEventListener("submit", (e) => {
 socket.on("chat message", function (data) {
   addNewMessage({ user: data.nick, message: data.message });
 });
+
+messageForm.addEventListener("input", (e) => {
+  e.preventDefault();
+
+  socket.emit("typing", {
+    user: userName
+  })
+})
+
+socket.on("typing", function (data) {
+  addNewMessage( {user : "", message: ((data.user + " is typing")).bold()});
+})
+
