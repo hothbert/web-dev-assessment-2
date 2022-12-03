@@ -4,36 +4,58 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Socket.io simple chat</title>
-    <link rel="stylesheet" href="/css/demo.css" />
+    <link rel="stylesheet" href="css/demo.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+      p, span {
+        text-align: left;
+        color: white;
+      }
+    </style>
+
   </head>
-  <body>
+  <body style="background-color: rgb(63, 13, 78) !important">
+
+    <nav style="display: block; float: right; overflow: auto;">
+      <ul class="nav nav-pills nav-justified">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="chat.html">Chat</a>
+        </li>    
+      </ul>        
+    </nav>
+
+
     <div class="sidenav">
-        <div class="inbox__people">
-            <h4>Active users</h4>
-          </div>
-
+      <div class="inbox__people">
+        <h4>Active users</h4>
       </div>
+    </div>
       
       
-      <br>
-      <hr>
-      <div class="content">
-        <div class="messages__history"></div>
-          <div class="fallback"></div>
-        <div class="inbox__messages">
-            
-          
-        </div>
+    <br>
+    <hr>
+    <div class="content">
+      <div class="messages__history"></div>
+      <div class="fallback"></div>
+      <div class="inbox__messages"></div>
 
-        <form class="message_form">
-            <input type="text" class="message_form__input" placeholder="Type a message" />
-            <button class="message_form__button" type="submit">
-              Enter
-            </button>
-          </form>
-      </div>
+      <form class="message_form">
+        <input type="text" class="message_form__input" placeholder="Type a message" />
+        <button class="message_form__button" type="submit">
+          Enter
+        </button>
+      </form>
+    </div>
 
-    
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/client.js"></script>
   </body>

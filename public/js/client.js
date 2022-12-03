@@ -51,7 +51,7 @@ socket.on("new user", function (data) {
           if(!!document.querySelector(`.${user}-userlist`)){
             console.log("a")
             return
-          }
+          } //checks user is in the list
           addNewMessage( {user : "", message: ((user + " has connected to the chat")).bold()}); //displays message about user joining
           
           addToUsersBox(user);
@@ -71,6 +71,7 @@ socket.on("user disconnected", function (userName) {
 const inputField = document.querySelector(".message_form__input");
 const messageForm = document.querySelector(".message_form");
 const messageBox = document.querySelector(".messages__history");
+const fallback = document.querySelector(".fallback");
 
 const addNewMessage = ({ user, message }) => {
   const time = new Date();
@@ -119,15 +120,33 @@ socket.on("chat message", function (data) {
   addNewMessage({ user: data.nick, message: data.message });
 });
 
+//displays message if the user is typing
+//checks if there is multiple characters in the input box
+inputField.addEventListener("keyup", () => {
+  socket.emit("type", {
+    typingTrue: inputField.value.length > 0,
+    nick: userName,
+  })
+})
+
+//checks for input
 messageForm.addEventListener("input", (e) => {
   e.preventDefault();
 
-  socket.emit("typing", {
+  socket.emit("type", {
     user: userName
   })
 })
 
-socket.on("typing", function (data) {
-  addNewMessage( {user : "", message: ((data.user + " is typing")).bold()});
-})
+//displays message if the user is typing only if the input box is empty
+socket.on("type", function (data) {
+  const { typingTrue, nick } = data;
 
+  if (!typingTrue) {
+    fallback.innerHTML = "";
+    return;
+  }
+
+  fallback.innerHTML = `<p>${nick} is typing..</p>`;
+
+});

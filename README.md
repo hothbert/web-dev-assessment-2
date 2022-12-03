@@ -1,25 +1,29 @@
-### What is this?
-This `README.md` file is auto-created for all new projects.
+**Challenges Faced**
 
-### Why am I here?
-This file opens automatically when you open a project. 
+One challenge I faced was setting up the user typing message. Originally, I had it set up to use addNewMessage however it would display the message for every character the user typed, even when the keyup event listener was being used. I fixed this by using fallback.innerHTML to display the message instead.
 
-If you do not create Guides, this `README.md` will be what automatically opens for students. You can edit this file by clicking on the pencil icon in the upper right corner.
+Another challenge I faced was setting up the containers on the home page. Originally I had just one fluid container on the page, however this would create a gap to the right of the second row. I then realized that each row needed its own container and this fixed the problem.
 
-### How do I get started with Codio?
-Use this [Onboarding Guide](https://codio.com/home/starter-packs/2ae8501b-e5f7-4b07-8e9f-adb155fc6d10) for an interactive tutorial through the main features of Codio. Click on the link, click **Use Pack** and then click **Create** to add it to your projects.
+**How the Chat Communicates with the Server**
 
-### How do I close this file?
-At the top of your workspace you will see tabs for each open file. Click the x on the right hand side of the tab that says **README.md**.
-![readMeTab](https://global.codio.com/platform/readme.resources/readMeTab.png)
+When client.js does a socket.emit event it sends the first argument as a message to the server (in this case index.js) and if index.js does a socket.emit event it sends the message to all clients. A socket.on event is how that device will behave as a result of these events, for example, displaying a message that the user has joined, left or typing.
 
-### I expected to see or edit learning materials.
-Select **Tools->Guide->Play** to view the Guide for this project.
-![playGuide](https://global.codio.com/platform/readme.resources/playGuide.png)
+reference: https://socket.io/get-started/chat/
 
-Click on the **Open Guides Editor** icon to edit the Guide.
-![guideEdit](https://global.codio.com/platform/readme.resources/guideEdit.png)
+**Development Process and Design Report**
 
-### How do I delete this file?
-To delete this `README.md` file, right-click (ctrl-click on a Mac) on the file name in the file list.
-![fileTree](https://global.codio.com/platform/readme.resources/fileTree.png)
+I started the website by making a framework for the general layout of the webpages (mainly the home and about pages). This included the banner and navigation bar, which were kept consistent across the two pages, however, I made the design more simple for the chat page so that I could focus on the javascript more. I also utilized Bootstrap 5 at this point, since this aids the overall appearance of a website and allows it to be responsive. 
+Next I added the content and information to the home page and then put supplementary information on the about page.
+I added a carousel of images to provide context to the hobbies section. All of these pictures were taken by me, meaning i could having to find images to license. I chose to add an accordion to make the webpage more interactive and interesting for the user.
+I then validated all of my CSS and HTML and removed all the errors that were found and added comments to the code.
+Lastly, I worked on the chat application, and I was able to set up the join message, leaving message and typing message.
+
+Throughout the process I made git commits to safely back up my work.
+
+The colours on the page were chosen to match the banner image. Darker colours were chosen since this is easier on the eyes. I made the borders rounded as this provides a neater appearance.
+
+*Changes to default bootstrap styles*
+
+One change i made was the border colour of the cards on the home page. I did this to match the background colour better and make them more visible on the page.
+Another change i made was to the background and text colours on the navigation buttons. I did this in order to match the theme of the rest of the web pages.
+Using '!important' in the arguments provided to be a useful way of overriding the default bootstrap properties.

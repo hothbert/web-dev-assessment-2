@@ -1,50 +1,109 @@
 * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  /* Style the side navigation */
-  .sidenav {
-    height: 100%;
-    width: 200px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-  }
+  box-sizing: border-box;
+}
 
-  /*make the active user text inherit style from container*/
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black !important;
+}
 
-  .inbox__people{
-      color: white;
-      padding: 16px;
-  }
-  
-  
-  /* Side navigation links */
-  .sidenav a {
-    color: white;
-    padding: 16px;
-    text-decoration: none;
-    display: block;
-  }
+/* Style the side navigation */
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+}
 
+/* make the active user text inherit style from container */
+.inbox__people {
+  color: white;
+  padding: 16px;
+}
 
-  
-  /* Change color on hover */
-  .sidenav a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
-  /* Style the content */
-  .content {
-    margin-left: 200px;
-    padding-left: 20px;
-  }
+/* Side navigation links */
+.sidenav a {
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color on hover */
+
+a:hover {
+  color: #a3a2a2 !important;
+}
+
+.sidenav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the content */
+.content {
+  margin-left: 200px;
+  padding-left: 20px;
+}
+
+/* general styling for all pages */
+
+/* style the banner */
+.banner {
+  width: 100%;
+  height: auto;
+}
+
+/* changes default bootstrap button coloursbuttons */
+.nav-link.active,
+.nav-link.active:hover,
+footer {
+  background-color: #290035 !important;
+  color: white !important;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+/* changes default bootstrap card border colour */
+.card {
+  --bs-card-border-color: #9c81a3 !important;
+}
+
+main {
+  background-color: #3f114e;
+  color: white;
+  padding: 10px;
+  margin: 5px;
+}
+
+nav {
+  margin: 5px;
+}
+
+footer {
+  height: 100px;
+}
+
+/* styles text */
+p {
+  font-size: 15px;
+}
+
+small {
+  font-size: 8px !important;
+}
+
+h4,
+h6,
+p {
+  text-align: center;
+}
+
+/* see readme.md for design report */
