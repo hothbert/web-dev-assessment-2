@@ -12,7 +12,7 @@ reference: https://socket.io/get-started/chat/
 
 **Development Process and Design Report**
 
-I started the website by making a framework for the general layout of the webpages (mainly the home and about pages). This included the banner and navigation bar, which were kept consistent across the two pages, however, I made the design more simple for the chat page so that I could focus on the javascript more. I also utilized Bootstrap 5 at this point, since this aids the overall appearance of a website and allows it to be responsive. 
+I started the website by making a framework for the general layout of the web pages (mainly the home and about pages). This included the banner and navigation bar, which were kept consistent across the two pages, however, I made the design more simple for the chat page so that I could focus on the javascript more. I also utilized Bootstrap 5 at this point, since this aids the overall appearance of a website and allows it to be responsive. 
 Next I added the content and information to the home page and then put supplementary information on the about page.
 I added a carousel of images to provide context to the hobbies section. All of these pictures were taken by me, meaning i could having to find images to license. I chose to add an accordion to make the webpage more interactive and interesting for the user.
 I then validated all of my CSS and HTML and removed all the errors that were found and added comments to the code.
